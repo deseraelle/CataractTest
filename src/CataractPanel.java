@@ -36,7 +36,7 @@ public class CataractPanel extends JPanel{
 	private static int SAMPLE_SIZE=10;
 	
 	//SETS THE NUMBER OF QUESTIONS (must be greater than 0 and less than SAMPLE_SIZE squared)
-	private static int NUMBER_OF_QUESTIONS=100;
+	private static int NUMBER_OF_QUESTIONS=10;
 	
 	//GUI PARAMETERS
 	private static int WINDOW_WIDTH = 900;
@@ -51,26 +51,26 @@ public class CataractPanel extends JPanel{
 	
 	// defines the image pathname variables. The images are stored in the resources/ folder 
 	// in separate transparent/ and cataract/ folders. All images are of size 400x267 pixels
-	private String cataract1="cataract/BuceyOD3.JPG";
-	private String cataract2="cataract/DAVIS_OS.JPG";
-	private String cataract3="cataract/FONNER_OS.JPG";
-	private String cataract4="cataract/JONES OD.JPG";
-	private String cataract5="cataract/MAGAHA_OS.JPG";
-	private String cataract6="cataract/nekola_OD2.JPG";
-	private String cataract7="cataract/ODEH_OD.JPG";
-	private String cataract8="cataract/riggs_OD.JPG";
-	private String cataract9="cataract/RIVERA OD.JPG";
-	private String cataract10="cataract/ROLLA_OD.JPG";
-	private String transparent1="transparent/BICHAY OD.JPG";
-	private String transparent2="transparent/DAVIS_OD.JPG";
-	private String transparent3="transparent/FONNER_OD.JPG";
-	private String transparent4="transparent/HJELMSTAD OS.JPG";
-	private String transparent5="transparent/JUSTUS_OS.JPG";
-	private String transparent6="transparent/Mapson_OD1.JPG";
-	private String transparent7="transparent/PHILLIPS OD.JPG";
-	private String transparent8="transparent/STEFFEY OS.JPG";
-	private String transparent9="transparent/TAIBL OS.JPG";
-	private String transparent10="transparent/WESTER OD.JPG";
+	private String cataract1="BuceyOD3.JPG";
+	private String cataract2="DAVIS_OS.JPG";
+	private String cataract3="FONNER_OS.JPG";
+	private String cataract4="JONES OD.JPG";
+	private String cataract5="MAGAHA_OS.JPG";
+	private String cataract6="nekola_OD2.JPG";
+	private String cataract7="ODEH_OD.JPG";
+	private String cataract8="riggs_OD.JPG";
+	private String cataract9="RIVERA OD.JPG";
+	private String cataract10="ROLLA_OD.JPG";
+	private String transparent1="BICHAY OD.JPG";
+	private String transparent2="DAVIS_OD.JPG";
+	private String transparent3="FONNER_OD.JPG";
+	private String transparent4="HJELMSTAD OS.JPG";
+	private String transparent5="JUSTUS_OS.JPG";
+	private String transparent6="Mapson_OD1.JPG";
+	private String transparent7="PHILLIPS OD.JPG";
+	private String transparent8="STEFFEY OS.JPG";
+	private String transparent9="TAIBL OS.JPG";
+	private String transparent10="WESTER OD.JPG";
 	private int answer, numberCorrect;
 	
 	// The enumArray is a numbered list of all possible combinations of images, represented as numerals (converted to image URLs once queue is set)
@@ -148,18 +148,19 @@ public class CataractPanel extends JPanel{
 	public void addImages(String pathname1, String pathname2) {
 		
 		//instantiate ImageIcon variables
-		ImageIcon icon1 = null;
-		ImageIcon icon2 = null;
-		
+		ImageIcon icon1 = new ImageIcon();
+		ImageIcon icon2 = new ImageIcon();
+
 		//randomly orders the two images
 		if (Math.random()>.5){
 			icon1 = new ImageIcon(getClass().getResource(pathname1));
 			icon2 = new ImageIcon(getClass().getResource(pathname2));
 			answer = 1;
 		} else {
+			answer = 2;
 			icon1 = new ImageIcon(getClass().getResource(pathname2));
 			icon2 = new ImageIcon(getClass().getResource(pathname1));
-			answer = 2;
+			
 		}
 		image1 = new JButton(icon1);
 		image2 = new JButton(icon2);
